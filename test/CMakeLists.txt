@@ -61,4 +61,8 @@ target_link_libraries(run-tests
     gmock
     ${CMAKE_THREAD_LIBS_INIT})
 
+include(GoogleTest)
+
+gtest_discover_tests(run-tests)
+
 add_test(yaml-test ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/run-tests)
