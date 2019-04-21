@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: seancollins/project3:latest
+    steps:
+      - checkout
+      - run:
+          name: Building yaml-cpp
+          command: |
+            cmake .. && make
+      - run:
+          name: Running the yaml-cpp test suite
+          command: |
+            ./test/run_tests
