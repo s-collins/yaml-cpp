@@ -15,4 +15,4 @@ jobs:
       - run:
           name: Running the yaml-cpp test suite
           command: |
-            ./build/test/run-tests
+            ctest -D Experimental
