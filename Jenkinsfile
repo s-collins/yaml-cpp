@@ -5,6 +5,8 @@ pipeline {
 		stage('build') {
 			steps {
 				sh '''
+					pwd
+					ls
 					mkdir build
 					cd build
 					cmake ..
