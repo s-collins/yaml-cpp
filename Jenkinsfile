@@ -3,16 +3,20 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				sh 'mkdir build',
-				sh 'cd build'
-				sh 'cmake ..'
-				sh 'make'
+				sh '''
+					mkdir build
+					cd build
+					cmake ..
+					make
+				'''
 			}
 		}
 		stage('test') {
 			steps {
-				sh 'cd build'
-				sh 'ctest'
+				sh '''
+					cd build
+					ctest
+				'''
 			}
 		}
 	}
