@@ -21,14 +21,13 @@ pipeline {
 				'''
 			}
 		}
-
-		stage('cleanup') {
-			steps {
-				sh '''
-					cd ..
-					rm -rf build
-				'''
-			}
+	}
+	post {
+		always {
+			sh '''
+				cd ..
+				rm -rf build
+			'''
 		}
 	}
 }
