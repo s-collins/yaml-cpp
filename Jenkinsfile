@@ -5,8 +5,6 @@ pipeline {
 		stage('build') {
 			steps {
 				sh '''
-					pwd
-					ls
 					mkdir build
 					cd build
 					cmake ..
@@ -27,10 +25,7 @@ pipeline {
 
 	post {
 		always {
-			sh '''
-				cd ..
-				rm -rf build
-			'''
+			sh 'rm -rf build'
 		}
 	}
 
