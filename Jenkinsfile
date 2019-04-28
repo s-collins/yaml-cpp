@@ -1,6 +1,7 @@
 pipeline {
 	agent { docker { image 'seancollins/project3:latest' } }
 	stages {
+
 		stage('build') {
 			steps {
 				sh '''
@@ -11,11 +12,21 @@ pipeline {
 				'''
 			}
 		}
+
 		stage('test') {
 			steps {
 				sh '''
 					cd build
 					ctest
+				'''
+			}
+		}
+
+		stage('cleanup') {
+			steps {
+				sh '''
+					cd ..
+					rm -rf build
 				'''
 			}
 		}
