@@ -349,6 +349,7 @@ endif()
 ### Extras
 ###
 if(YAML_CPP_BUILD_TESTS)
+	include(CTest)
 	enable_testing()
 	add_subdirectory(test)
 endif()
