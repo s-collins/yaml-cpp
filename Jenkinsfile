@@ -17,7 +17,7 @@ pipeline {
 			steps {
 				sh '''
 					cd build
-					ctest
+					ctest -D Experimental
 				'''
 			}
 		}
