@@ -9,5 +9,11 @@ pipeline {
 				sh 'make'
 			}
 		}
+		stage('test') {
+			steps {
+				sh 'cd build'
+				sh 'ctest'
+			}
+		}
 	}
 }
